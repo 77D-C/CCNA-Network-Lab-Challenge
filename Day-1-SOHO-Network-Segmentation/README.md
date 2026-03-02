@@ -35,6 +35,12 @@ Utilizing a standard Class C network (`192.168.1.0/24`) and divided it into smal
 * **Layer 3 Routing (The Router):** Inter-VLAN Routing utilizing "Router-on-a-Stick" (allowing the two separate departments to still talk to each other when necessary using just one physical cable).
 * **Network Services:** Cisco IOS DHCP Server configuration (the automated system handing out IP addresses).
 
+##
+<img width="1111" height="363" alt="pingtoothervlan" src="https://github.com/user-attachments/assets/ef433a80-3b0b-4a86-bbb3-34f0134e7362" />
+<img width="418" height="422" alt="pingproof" src="https://github.com/user-attachments/assets/d90e3fcd-9e49-45d2-8fe3-fef2da600e1a" />
+<img width="428" height="257" alt="defaultping" src="https://github.com/user-attachments/assets/5d16e4ce-456a-4616-a74a-996c66826e57" />
+
+
 ### Configuration Highlights
 
 #### 1. DHCP Pool & Exclusions (Automated IP Addressing)
@@ -47,7 +53,6 @@ ip dhcp pool SALES
  network 192.168.1.0 255.255.255.192
  default-router 192.168.1.1
  dns-server 8.8.8.8
-<img width="1111" height="363" alt="pingtoothervlan" src="https://github.com/user-attachments/assets/ef433a80-3b0b-4a86-bbb3-34f0134e7362" />
-<img width="418" height="422" alt="pingproof" src="https://github.com/user-attachments/assets/d90e3fcd-9e49-45d2-8fe3-fef2da600e1a" />
-<img width="428" height="257" alt="defaultping" src="https://github.com/user-attachments/assets/5d16e4ce-456a-4616-a74a-996c66826e57" />
+
+
 
