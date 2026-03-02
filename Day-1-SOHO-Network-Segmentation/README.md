@@ -36,11 +36,11 @@ Utilizing a standard Class C network (`192.168.1.0/24`) and divided it into smal
 * **Network Services:** Cisco IOS DHCP Server configuration (the automated system handing out IP addresses).
 
 ##
-<img width="1111" height="363" alt="pingtoothervlan" src="https://github.com/user-attachments/assets/ef433a80-3b0b-4a86-bbb3-34f0134e7362" />
 
-<img width="1139" height="454" alt="dhcp proof" src="https://github.com/user-attachments/assets/56dcc3b5-dbbf-4073-95a0-d6da4097c7f0" />
 
-<img width="428" height="257" alt="defaultping" src="https://github.com/user-attachments/assets/5d16e4ce-456a-4616-a74a-996c66826e57" />
+
+
+
 
 
 ### Configuration Highlights
