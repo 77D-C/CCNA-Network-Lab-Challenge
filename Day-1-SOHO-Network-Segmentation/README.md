@@ -47,3 +47,7 @@ ip dhcp pool SALES
  network 192.168.1.0 255.255.255.192
  default-router 192.168.1.1
  dns-server 8.8.8.8
+<img width="1111" height="363" alt="pingtoothervlan" src="https://github.com/user-attachments/assets/ef433a80-3b0b-4a86-bbb3-34f0134e7362" />
+<img width="418" height="422" alt="pingproof" src="https://github.com/user-attachments/assets/d90e3fcd-9e49-45d2-8fe3-fef2da600e1a" />
+<img width="428" height="257" alt="defaultping" src="https://github.com/user-attachments/assets/5d16e4ce-456a-4616-a74a-996c66826e57" />
+
