@@ -9,6 +9,7 @@ Continuing my 7-day Cisco Packet Tracer lab sprint, Day 2 focuses on scaling the
 
 ## Network Topology
 
+<img width="434" height="297" alt="day2topology" src="https://github.com/user-attachments/assets/dffb1904-c71d-4773-9a08-d4d97d3d8274" />
 
 
 ---
@@ -29,6 +30,10 @@ Added a `/30` point-to-point transit link to conserve IP addresses, along with a
 * **Core Concepts:** Wildcard Masking, Routing Table Analysis, Packet Tracer Simulation Mode Diagnostics.
 
 ### Configuration Highlights
+<img width="1097" height="374" alt="day2ospfipneighbor" src="https://github.com/user-attachments/assets/1a517624-c741-41b6-92c6-63bd6474901a" />
+
+<img width="770" height="378" alt="crossnetping" src="https://github.com/user-attachments/assets/056b8fab-5435-4825-b6c1-be45cdf61f85" />
+
 
 #### 1. Centralized DHCP Pool (HQ Router)
 Configured the HQ router to manage the IP scope for the remote branch.
