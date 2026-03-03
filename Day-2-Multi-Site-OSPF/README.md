@@ -37,9 +37,36 @@ Added a `/30` point-to-point transit link to conserve IP addresses, along with a
 
 #### 1. Centralized DHCP Pool (HQ Router)
 Configured the HQ router to manage the IP scope for the remote branch.
-```text
+```
 ip dhcp excluded-address 192.168.2.1
 ip dhcp pool BRANCH
  network 192.168.2.0 255.255.255.0
  default-router 192.168.2.1
  dns-server 8.8.8.8
+```
+
+2. DHCP Relay Implementation (Branch Router)
+Configured the LAN-facing interface to intercept broadcast DHCP requests and forward them as unicast packets across the WAN to the HQ router.
+
+```
+interface GigabitEthernet0/0
+ ip helper-address 10.0.0.1
+```
+3. OSPFv2 Implementation (Branch Router)
+Advertising the connected networks into OSPF Area 0 using wildcard masks so the DHCP replies know how to route back to the branch.
+
+```
+router ospf 1
+ network 10.0.0.0 0.0.0.3 area 0
+ network 192.168.2.0 0.0.0.255 area 0
+```
+Verification & Troubleshooting
+During initial configuration, the Branch PC failed to pull a DHCP address.
+
+Diagnostic Isolation: Utilized Packet Tracer's Simulation Mode to track the DORA process. Identified that the DHCP request successfully crossed the WAN, but was dropped by the HQ router.
+
+Root Cause Analysis: Investigated the dropped PDU and verified the HQ router lacked an available address pool due to a misconfigured subnet mask in the ip dhcp pool configuration.
+
+Resolution: Corrected the mask, verified the OSPF adjacency via show ip ospf neighbor, and confirmed the Branch PC successfully leased 192.168.2.3.
+
+End-to-End Connectivity: Successfully sent ICMP echo requests from the Branch PC across the WAN to the HQ VLANs.
