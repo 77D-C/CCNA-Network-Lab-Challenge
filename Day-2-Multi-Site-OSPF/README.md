@@ -1,7 +1,7 @@
 # Day 2: Multi-Site OSPF Expansion & Centralized DHCP Management
 
 ## Project Context
-Continuing my 7-day Cisco Packet Tracer lab sprint, Day 2 focuses on scaling the Day 1 SOHO network into a multi-site enterprise environment. This lab demonstrates my ability to configure Wide Area Network (WAN) links, implement dynamic routing protocols, and centralize network services across multiple geographic locations.
+Continuing my Cisco Packet Tracer lab journey, Day 2 focuses on scaling the Day 1 SOHO network into a multi-site enterprise environment. This lab demonstrates my ability to configure Wide Area Network (WAN) links, implement dynamic routing protocols, and centralize network services across multiple geographic locations.
 
 ## Non-Technical Summary: What Does This Project Do?
 * **The Problem:** The startup from Day 1 opened a remote Branch Office. The new employees need access to the network, but manually programming routes between the buildings is inefficient. Furthermore, managing separate IP address pools at every physical location creates administrative overhead.
