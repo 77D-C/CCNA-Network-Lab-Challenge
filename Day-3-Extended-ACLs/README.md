@@ -14,6 +14,7 @@ While today's project didn't expand the network's footprint, the configurations 
 
 ## Network Topology
 
+<img width="919" height="455" alt="day3" src="https://github.com/user-attachments/assets/d0ef4be3-1874-4e69-a1ac-13936c58e785" />
 
 
 ---
