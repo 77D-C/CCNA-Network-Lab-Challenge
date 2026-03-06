@@ -8,7 +8,8 @@ The objective of this project was to securely host a public-facing corporate web
 * **The Solution:** I created an isolated "quarantine" network (a DMZ). I then configured the main router to take any web traffic hitting the company's public internet address and forward it exclusively to this server. Finally, I implemented a strict digital firewall rule ensuring that while the server can talk to the internet, it is completely blocked from reaching back into the private employee networks.
 
 ## Network Topology
-*(Upload your DMZ topology screenshot here)*
+
+*<img width="434" height="316" alt="Day_5_topology" src="https://github.com/user-attachments/assets/45c1f101-560a-44f9-b5bd-ab346f221ec6" />*
 
 ---
 
@@ -45,6 +46,21 @@ interface GigabitEthernet0/1.30
 Verification & Troubleshooting
 VLAN Trunking Resolution: During initial testing, the DMZ server could not reach its default gateway. Troubleshooting Layer 2 revealed the switch's uplink trunk port had a restricted allowed VLAN list. I added VLAN 30 to the trunk, restoring connectivity.
 
-NAT Verification: Successfully loaded the custom HTML index page from an external client on the simulated public internet. (See dmz_webpage_live.png)
+NAT Verification: Static Routing Verification: Executed show ip nat translations on the HQ router to confirm the static port forwarding rule was actively mapping the public IP (203.0.113.2:80) to the internal DMZ server (192.168.3.10:80). 
 
-Security Verification: Attempted to ping the internal Sales VLAN from the DMZ Web Server. The traffic was successfully dropped by the router, logging matches on the Extended ACL. (See dmz_acl_block.png and acl_hit_counters.png)
+<img width="424" height="106" alt="static_nat_translations" src="https://github.com/user-attachments/assets/1792c981-ab9d-4fbb-9b41-b2188e03b5ab" />
+
+
+Successfully loaded the custom HTML index page from an external client on the simulated public internet. 
+
+<img width="431" height="296" alt="dmz_website_live" src="https://github.com/user-attachments/assets/6964ac18-b16d-4766-8714-9f4948357c1f" />
+
+
+
+Security Verification: Attempted to ping the internal Sales VLAN from the DMZ Web Server. The traffic was successfully dropped by the router, logging matches on the Extended ACL. 
+
+<img width="431" height="296" alt="dmz_website_live" src="https://github.com/user-attachments/assets/18617020-f928-4953-9f1c-98ab156581d3" />
+
+<img width="427" height="129" alt="acl_hit_counters" src="https://github.com/user-attachments/assets/c4f45676-4840-4483-8791-b532d839e7c7" />
+
+
