@@ -62,6 +62,8 @@ Security Verification: Successfully logged into the HQ-Gateway from a Sales VLAN
 
 Dynamic Routing Verification:
 Checked the Branch router's routing table to confirm the default route (O*E2 0.0.0.0/0) was successfully injected via OSPF. 
+
+
 <img width="428" height="287" alt="ospf_default_route" src="https://github.com/user-attachments/assets/2efd14b4-137c-432b-a30f-15fb9762822d" />
 
 
