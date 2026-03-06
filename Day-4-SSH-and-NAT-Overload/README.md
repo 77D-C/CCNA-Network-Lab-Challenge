@@ -12,7 +12,7 @@ Before opening any routes to the internet, it was critical to establish a securi
 * Second, I simulated an ISP connection and implemented NAT Overload (Port Address Translation). This acts like a corporate mailroom—it takes outbound requests from internal employees, stamps them with the company's single public return address, and securely routes the replies back to the correct internal desk.
 
 ## Network Topology
-**
+*<img width="461" height="331" alt="Day4_topology" src="https://github.com/user-attachments/assets/99f51fc5-4193-4bf5-99ef-97639fd39c91" />*
 
 
 ---
@@ -56,9 +56,15 @@ Verification & Troubleshooting
 Hardware Limitations Overcome: During implementation, the HQ 1941 router lacked sufficient physical Gigabit interfaces for the ISP connection.
 I powered down the simulated device, installed an HWIC-2T expansion module, and brought the Serial WAN link up using DCE clocking to establish the connection.
 
-Security Verification: Successfully logged into the HQ-Gateway from a Sales VLAN PC using SSH, confirming the deprecation of Telnet. (See ssh_login.png)
+Security Verification: Successfully logged into the HQ-Gateway from a Sales VLAN PC using SSH, confirming the deprecation of Telnet. <img width="224" height="92" alt="ssh_login" src="https://github.com/user-attachments/assets/8f68e3d5-d7c8-4382-b5ea-afbbcc157af1" />
 
-Dynamic Routing Verification: Checked the Branch router's routing table to confirm the default route (O*E2 0.0.0.0/0) was successfully injected via OSPF. (See ospf_default_route.png)
+
+Dynamic Routing Verification: Checked the Branch router's routing table to confirm the default route (O*E2 0.0.0.0/0) was successfully injected via OSPF. <img width="428" height="287" alt="ospf_default_route" src="https://github.com/user-attachments/assets/2efd14b4-137c-432b-a30f-15fb9762822d" />
+
 
 Translation & Connectivity Verification: Successfully sent ICMP traffic from both the HQ and Branch PCs to an external 8.8.8.8 server.
-Executed show ip nat translations on the HQ router to verify the private source IPs were successfully multiplexed onto the public 203.0.113.2 interface using unique port numbers. (See nat_translations.png, hq_ping.png, branch_ping.png)
+Executed show ip nat translations on the HQ router to verify the private source IPs were successfully multiplexed onto the public 203.0.113.2 interface using unique port numbers.
+<img width="432" height="127" alt="nat_translations" src="https://github.com/user-attachments/assets/f22f6a0d-9cb7-41ef-821d-60935368d852" /> <img width="437" height="182" alt="hq_ping" src="https://github.com/user-attachments/assets/d1384015-a1c1-465e-b570-cd53be0c2691" /> <img width="420" height="178" alt="Branch_ping" src="https://github.com/user-attachments/assets/83788d30-f17e-4281-8484-fb27fd63c762" />
+
+
+
