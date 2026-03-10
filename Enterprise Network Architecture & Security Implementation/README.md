@@ -12,7 +12,7 @@
 
 The objective of this deployment was to build a network from the ground up that guarantees uptime, secures data across public infrastructure, supports scalable wireless access, and enforces strict physical boundaries. The architecture supports a primary Headquarters (HQ) and a remote Branch office, built with enterprise-grade resilience in mind.
 
-![Network Topology]
+
 *<img width="626" height="343" alt="day-7_topology" src="https://github.com/user-attachments/assets/00e995f2-1034-4bcc-9537-44151c6f15d8" />*
 
 ---
@@ -33,7 +33,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **First Hop Redundancy:** Deployed Hot Standby Router Protocol (HSRP) across the HQ campus.
 * **Automated Failover:** Configured an Active/Standby gateway relationship with preemptive routing. Successfully simulated catastrophic hardware failure, verifying that internal traffic transparently failed over to the backup router with no connection loss.
 
-![HSRP Failover Proof]
+
 *<img width="635" height="311" alt="hsrp_failover_ping" src="https://github.com/user-attachments/assets/e938e189-5312-46a8-9f16-2739d342248d" />*
 
 
@@ -44,7 +44,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **Centralized Syslog:** Routed management traffic securely through the VPN tunnel, configuring edge routers and core switches to forward operational logs to a centralized HQ management server for single-pane-of-glass visibility.
 * **NTP Synchronization:** Deployed a central Network Time Protocol (NTP) server to ensure millisecond-accurate timestamping across all device logs for forensic analysis.
 
-![Syslog Dashboard]
+
 *<img width="1148" height="259" alt="syslog_campu_centralized" src="https://github.com/user-attachments/assets/6dcc53f3-66f1-421e-b23b-87c2fdf5efa1" />*
 
 ### Phase 4: Enterprise Wireless Infrastructure
@@ -55,7 +55,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **Layer 3 Discovery:** Configured DHCP Option 43 on the Branch router, allowing LAPs to automatically locate the WLC across different IP subnets.
 * **Wireless Security:** Built and broadcasted the `Branch-Corp` SSID, securing it with WPA2-PSK (AES) encryption.
 
-![WLC Dashboard]
+
 *<img width="1148" height="259" alt="syslog_campu_centralized" src="https://github.com/user-attachments/assets/12bcdfb7-ab31-49d2-ba4a-f44bf908d7d1" />*
 
 ### Phase 5: Layer 2 Hardening & Access Security
@@ -65,7 +65,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **Blackhole VLAN:** Mitigated the risk of unauthorized physical access by administratively shutting down all unused switch ports and isolating them in a non-routed "Blackhole" VLAN (VLAN 999).
 * **Encrypted Management:** Hardened remote device administration by disabling legacy Telnet access, generating RSA crypto keys, and forcing secure, encrypted SSHv2 connections.
 
-![Port Security Trap]
+
 *<img width="289" height="170" alt="port_security_config" src="https://github.com/user-attachments/assets/06ae317c-19c1-4667-beb8-6ecf3b8684e9" />*
 
 
