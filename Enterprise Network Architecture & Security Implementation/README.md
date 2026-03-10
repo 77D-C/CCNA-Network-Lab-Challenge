@@ -45,7 +45,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **NTP Synchronization:** Deployed a central Network Time Protocol (NTP) server to ensure millisecond-accurate timestamping across all device logs for forensic analysis.
 
 
-*<img width="680" height="266" alt="WLC_Dashboard_active" src="https://github.com/user-attachments/assets/303ee231-8397-498b-9cd9-5f505da50eff" />*
+*<img width="1148" height="259" alt="syslog_campu_centralized" src="https://github.com/user-attachments/assets/12bcdfb7-ab31-49d2-ba4a-f44bf908d7d1" />*
 
 ### Phase 4: Enterprise Wireless Infrastructure
 *Objective: Transition from autonomous access points to a scalable, centrally managed enterprise wireless environment.*
@@ -56,7 +56,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **Wireless Security:** Built and broadcasted the `Branch-Corp` SSID, securing it with WPA2-PSK (AES) encryption.
 
 
-*<img width="1148" height="259" alt="syslog_campu_centralized" src="https://github.com/user-attachments/assets/12bcdfb7-ab31-49d2-ba4a-f44bf908d7d1" />*
+*<img width="680" height="266" alt="WLC_Dashboard_active" src="https://github.com/user-attachments/assets/303ee231-8397-498b-9cd9-5f505da50eff" />*
 
 ### Phase 5: Layer 2 Hardening & Access Security
 *Objective: Implement a "Zero Trust" model at the physical layer to protect against unauthorized access and rogue devices.*
