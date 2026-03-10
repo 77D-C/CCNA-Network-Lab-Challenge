@@ -45,7 +45,7 @@ The objective of this deployment was to build a network from the ground up that 
 * **NTP Synchronization:** Deployed a central Network Time Protocol (NTP) server to ensure millisecond-accurate timestamping across all device logs for forensic analysis.
 
 
-*<img width="1148" height="259" alt="syslog_campu_centralized" src="https://github.com/user-attachments/assets/6dcc53f3-66f1-421e-b23b-87c2fdf5efa1" />*
+*<img width="680" height="266" alt="WLC_Dashboard_active" src="https://github.com/user-attachments/assets/303ee231-8397-498b-9cd9-5f505da50eff" />*
 
 ### Phase 4: Enterprise Wireless Infrastructure
 *Objective: Transition from autonomous access points to a scalable, centrally managed enterprise wireless environment.*
