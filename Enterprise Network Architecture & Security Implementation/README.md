@@ -81,6 +81,3 @@ The objective of this deployment was to build a network from the ground up that 
 | **Infrastructure Services** | DHCP, DNS, NTP, Syslog |
 | **Wireless** | WLC (3504), Lightweight APs, CAPWAP, DHCP Option 43, WPA2 |
 | **Security** | Port Security, Sticky MAC, Blackhole VLANs, SSHv2, RSA |
-
----
-*This repository serves as a practical portfolio demonstration of the enterprise routing, switching, and security competencies for Junior Network Administrator and NOC Technician roles*
