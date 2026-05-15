@@ -1,0 +1,78 @@
+---
+- name: Configure Nginx Web Server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Create custom index.html
+      copy:
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>SRE Automation Lab</title>
+              <style>
+                  body {
+                      background-color: #0f0f0f;
+                      color: #00ff41;
+                      font-family: 'Courier New', Courier, monospace;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      align-items: center;
+                      height: 100vh;
+                      margin: 0;
+                      overflow: hidden;
+                  }
+                  .container {
+                      text-align: center;
+                      border: 2px solid #00f2ff;
+                      padding: 50px;
+                      box-shadow: 0 0 20px #00f2ff;
+                      border-radius: 10px;
+                      background: rgba(0, 0, 0, 0.8);
+                  }
+                  h1 {
+                      font-size: 3rem;
+                      text-transform: uppercase;
+                      letter-spacing: 5px;
+                      margin-bottom: 20px;
+                      animation: glow 1.7s ease-in-out infinite alternate;
+                  }
+                  @keyframes glow {
+                      from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000; }
+                      to { text-shadow: 0 0 10px #fff, 0 0 20px #4dff88, 0 0 30px #00f3ff; }
+                  }
+                  .status {
+                      color: #fff;
+                      font-size: 1.2rem;
+                  }
+                  .pixel {
+                      position: absolute;
+                      width: 2px;
+                      height: 2px;
+                      background: #00ff41;
+                      opacity: 0.3;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>Server Online</h1>
+                  <p class="status">All systems operational.</p>
+                  <p style="color: #888;">Node IP: {{ ansible_default_ipv4.address }}</p>
+              </div>
+          </body>
+          </html>
+        dest: /var/www/html/index.html
+
+    - name: Ensure Nginx is started and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
