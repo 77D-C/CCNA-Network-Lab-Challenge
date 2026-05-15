@@ -1,5 +1,9 @@
-terraform.tfstate*
+# Ignore Terraform files everywhere in the repo
+*.tfstate
+*.tfstate.backup
 .terraform/
+.terraform.lock.hcl
+
+# Ignore private SSH keys
 *.pem
-ansible_key*
-.aws/
+*.key
