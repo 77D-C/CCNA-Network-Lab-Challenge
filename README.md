@@ -12,10 +12,10 @@ A fully automated, immutable infrastructure deployment utilizing a unified Linux
 ### Project Showcase
 | System Online (Live Landing Page) | AWS Infrastructure Status |
 |---|---|
-| ![Landing Page](./AWS-Automation-Lab/screenshots/victory.png) | ![AWS Console](./AWS-Automation-Lab/screenshots/infrastructure.png) |
+| ![Landing Page](./AWS-SRE-Lab/screenshots/victory.png) | ![AWS Console](./AWS-SRE-Lab/screenshots/infrastructure.png) |
 
 > **Automation Deployment Loop:**
-> ![Terminal Output](./AWS-Automation-Lab/screenshots/automation.png)
+> ![Terminal Output](./AWS-SRE-Lab/screenshots/automation.png)
 
 ### Core Capabilities Demonstrated:
 * **Infrastructure as Code (IaC):** Utilized Terraform to provision AWS EC2 instances, custom security groups, and key pairs entirely from a WSL2 (Ubuntu) environment.
