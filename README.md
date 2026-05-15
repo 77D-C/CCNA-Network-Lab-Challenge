@@ -5,7 +5,7 @@ Welcome to my technical lab repository. This project showcases a progression fro
 ---
 
 ## Project 1: AWS Automated Web Infrastructure (SRE Lab)
-**Directory:** [/AWS-Automation-Lab](./AWS-Automation-Lab)
+**Directory:** [/AWS-SRE-Lab](./AWS-SRE-Lab)
 
 A fully automated, immutable infrastructure deployment utilizing a unified Linux workflow to provision and configure cloud resources.
 
