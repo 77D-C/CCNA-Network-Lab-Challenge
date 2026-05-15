@@ -1,5 +1,4 @@
-# AWS Automated Web Infrastru
-cture Deployment
+# AWS Automated Web Infrastructure Deployment
 
 This sub-project handles the automated provisioning and configuration management of a public-facing Nginx web server on AWS. The objective was to eliminate manual console configurations and replace them with a unified, repeatable Infrastructure as Code (IaC) execution model.
 
