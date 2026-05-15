@@ -44,5 +44,6 @@ ANSIBLE_HOST_KEY_CHECKING=False
  ansible-playbook -i inventory.ini setup_nginx.yml
 ```
 Technical Note: Why ANSIBLE_HOST_KEY_CHECKING=False?
+
 When connecting to a newly provisioned AWS instance for the first time, SSH naturally pauses execution to prompt the user to manually accept the remote host's security fingerprint. Because this lab runs on a non-interactive automation loop, this security prompt would cause the deployment script to hang and fail.
 Prepending ANSIBLE_HOST_KEY_CHECKING=False bypasses this manual handshake verification check, allowing Ansible to immediately log in, establish its secure channel, and deploy the Nginx server configuration entirely hands-free.
