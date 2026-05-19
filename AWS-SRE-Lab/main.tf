@@ -62,7 +62,7 @@ resource "aws_security_group" "web_sg" {
 # --- 3. The SSH Key Pair ---
 resource "aws_key_pair" "deployer" {
   key_name   = "ansible-key"
-  public_key = file("~/.ssh/ansible_key.pub")
+  public_key = file("/home/dc/.ssh/ansible_key.pub")
 }
 
 # --- 4. The Web Server (Merged Block) ---
