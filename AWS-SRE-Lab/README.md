@@ -56,10 +56,10 @@ In a typical development lifecycle, destroying and recreating cloud infrastructu
 ### The Solution: Decoupled Local DNS Orchestration
 To solve this, this repository implements a decoupled multi-tool execution wrapper via `deploy.sh`. 
 
-Instead of hardcoding shifting IPs, the inventory targets a static, localized domain alias (`srelab.local`). The pipeline automates the data handoff behind the scenes:
+Instead of hardcoding shifting IPs, the inventory targets a static, localized domain alias (`srelab.test`). The pipeline automates the data handoff behind the scenes:
 
 1. **State Extraction:** Terraform provisions the network interfaces and outputs the live cloud IP string dynamically.
 2. **Local Nameserver Override:** The shell runner programmatically purges expired pointers and writes the fresh IP directly into the local control node system dictionary (`/etc/hosts`) using streamlined stream editing (`sed`).
-3. **Decoupled Execution:** Ansible reads the persistent inventory file, and the operating system naturally resolves `srelab.local` straight to the active AWS target.
+3. **Decoupled Execution:** Ansible reads the persistent inventory file, and the operating system naturally resolves `srelab.test` straight to the active AWS target.
 
 This architectural pattern guarantees that the code remains generic, environment-agnostic, and entirely modular for version control.
