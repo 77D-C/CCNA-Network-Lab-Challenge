@@ -47,3 +47,19 @@ Technical Note: Why ANSIBLE_HOST_KEY_CHECKING=False?
 
 When connecting to a newly provisioned AWS instance for the first time, SSH naturally pauses execution to prompt the user to manually accept the remote host's security fingerprint. Because this lab runs on a non-interactive automation loop, this security prompt would cause the deployment script to hang and fail.
 Prepending ANSIBLE_HOST_KEY_CHECKING=False bypasses this manual handshake verification check, allowing Ansible to immediately log in, establish its secure channel, and deploy the Nginx server configuration entirely hands-free.
+
+## Pipeline Optimization: Dynamic Local DNS Resolution
+
+### The Challenge
+In a typical development lifecycle, destroying and recreating cloud infrastructure results in randomized public IPv4 addresses. Manually editing the Ansible configuration file (`inventory.ini`) after every single orchestration cycle introduces human intervention into what should be an automated, non-interactive pipeline.
+
+### The Solution: Decoupled Local DNS Orchestration
+To solve this, this repository implements a decoupled multi-tool execution wrapper via `deploy.sh`. 
+
+Instead of hardcoding shifting IPs, the inventory targets a static, localized domain alias (`srelab.local`). The pipeline automates the data handoff behind the scenes:
+
+1. **State Extraction:** Terraform provisions the network interfaces and outputs the live cloud IP string dynamically.
+2. **Local Nameserver Override:** The shell runner programmatically purges expired pointers and writes the fresh IP directly into the local control node system dictionary (`/etc/hosts`) using streamlined stream editing (`sed`).
+3. **Decoupled Execution:** Ansible reads the persistent inventory file, and the operating system naturally resolves `srelab.local` straight to the active AWS target.
+
+This architectural pattern guarantees that the code remains generic, environment-agnostic, and entirely modular for version control.
